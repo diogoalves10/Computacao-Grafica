@@ -1,4 +1,4 @@
-// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+
 //
 
 #include <iostream>
@@ -10,9 +10,9 @@
 
 using namespace std;
 
-void geraPlano(double lado, string ficheiro) {
-	ofstream fich;
-	fich.open(ficheiro, std::fstream::in | std::fstream::out | std::fstream::app);
+void makePlane(double side, string file) {
+	ofstream f;
+	fich.open(file, std::fstream::in | std::fstream::out | std::fstream::app);
 	double l;
 	l = lado / 2;
 	fich << "" << (-l) << " 0 " << (-l) << endl;
@@ -23,5 +23,5 @@ void geraPlano(double lado, string ficheiro) {
 	fich << "" << (l) << " 0 " << (l) << endl;
 	fich << "" << (l) << " 0 " << (-l) << endl;
 	
-	fich.close();
+	f.close();
 }
