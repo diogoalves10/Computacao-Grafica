@@ -12,16 +12,16 @@ using namespace std;
 
 void makePlane(double side, string file) {
 	ofstream f;
-	fich.open(file, std::fstream::in | std::fstream::out | std::fstream::app);
+	f.open(file, std::fstream::in | std::fstream::out | std::fstream::app);
 	double l;
 	l = lado / 2;
-	fich << "" << (-l) << " 0 " << (-l) << endl;
-	fich << "" << (-l) << " 0 " << (l) << endl;
-	fich << "" << (l) << " 0 " << (l) << endl;
+	f << "" << (-l) << " 0 " << (-l) << endl;
+	f << "" << (-l) << " 0 " << (l) << endl;
+	f << "" << (l) << " 0 " << (l) << endl;
 
-	fich << "" << (-l) << " 0 " << (-l) << endl;
-	fich << "" << (l) << " 0 " << (l) << endl;
-	fich << "" << (l) << " 0 " << (-l) << endl;
+	f << "" << (-l) << " 0 " << (-l) << endl;
+	f << "" << (l) << " 0 " << (l) << endl;
+	f << "" << (l) << " 0 " << (-l) << endl;
 	
 	f.close();
 }
