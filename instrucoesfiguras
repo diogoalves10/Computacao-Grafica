@@ -1,0 +1,83 @@
+//coordenadas dos pontos para criar as figuras
+
+
+glBegin(GL_TRIANGLES);
+
+//criar o plano : usei os triangulos que usamos para criar a base das piramides
+
+		// base
+		glVertex3f(1.0f, 0.0f, 1.0f);
+		glVertex3f(-1.0f, 0.0f, 1.0f);
+		glVertex3f(-1.0f, 0.0f, -1.0f);
+
+         glVertex3f(1.0f, 0.0f, 1.0f);
+         glVertex3f(-1.0f, 0.0f, -1.0f);
+         glVertex3f(1.0f, 0.0f, -1.0f);
+
+ //criar a caixa
+	// base
+        glColor3b(0, 20, 0);
+		glVertex3f(1.0f, 0.0f, 1.0f);
+		glVertex3f(-1.0f, 0.0f, 1.0f);
+		glVertex3f(-1.0f, 0.0f, -1.0f);
+
+         glVertex3f(1.0f, 0.0f, 1.0f);
+         glVertex3f(-1.0f, 0.0f, -1.0f);
+         glVertex3f(1.0f, 0.0f, -1.0f);
+
+   
+
+    //topo azul
+    glColor3b(0, 0, 100);
+    glVertex3f(1.0f, 1.0f, 1.0f);
+    glVertex3f(-1.0f, 1.0f, 1.0f);
+    glVertex3f(-1.0f, 1.0f, -1.0f);
+
+    //topo azul
+    glColor3b(0, 0, 100);
+    glVertex3f(1.0f, 1.0f, 1.0f);
+    glVertex3f(-1.0f, 1.0f, -1.0f);
+    glVertex3f(1.0f, 1.0f, -1.0f);
+
+
+    glColor3b(100, 0, 0);
+    glVertex3f(-1.0f, 0.0f, -1.0f);
+    glVertex3f(1.0f, 0.0f, -1.0f);
+    glVertex3f(1.0f, 1.0f, -1.0f);
+
+    glColor3b(100, 0, 0);
+    glVertex3f(-1.0f, 0.0f, -1.0f);
+    glVertex3f(-1.0f, 1.0f, -1.0f);
+    glVertex3f(1.0f, 1.0f, -1.0f);
+
+    glColor3b(100, 100, 0);
+    glVertex3f(1.0f, 0.0f, -1.0f);
+    glVertex3f(1.0f, 1.0f, -1.0f);
+    glVertex3f(1.0f, 1.0f, 1.0f);
+
+    glColor3b(100, 100, 0);
+    glVertex3f(1.0f, 0.0f, 1.0f);
+    glVertex3f(1.0f, 1.0f, 1.0f);
+    glVertex3f(1.0f, 0.0f, -1.0f);
+
+    glColor3b(100, 0, 100);
+    glVertex3f(1.0f, 1.0f, 1.0f);
+    glVertex3f(1.0f, 0.0f, 1.0f);
+    glVertex3f(-1.0f, 0.0f, 1.0f);
+
+    //roxo
+    glColor3b(100,0,100);
+    glVertex3f(-1.0f, 0.0f, 1.0f);
+    glVertex3f(-1.0f, 1.0f, 1.0f);
+    glVertex3f(1.0f, 1.0f, 1.0f);
+
+    glColor3b(0,100,100);
+    glVertex3f(-1.0f, 0.0f, 1.0f);
+    glVertex3f(-1.0f, 1.0f, 1.0f);
+    glVertex3f(-1.0f, 0.0f, -1.0f);
+
+    //azul bebé
+    glColor3b(0,100,100);
+    glVertex3f(-1.0f, 0.0f, -1.0f);
+    glVertex3f(-1.0f, 1.0f, -1.0f);
+    glVertex3f(-1.0f, 1.0f, 1.0f);
