@@ -102,7 +102,7 @@ void makeBox(double comprimento , double altura , double largura, string file ){
 
 
 
-    void make Sphere (float radius, int slices , int stacks, string file) {
+    void makeSphere (float radius, int slices , int stacks, string file) {
 
     ofstream f;
     f.open(file, std::fstream::in | std::fstream::out | std::fstream::app);
