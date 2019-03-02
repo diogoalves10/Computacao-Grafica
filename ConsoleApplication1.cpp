@@ -34,17 +34,17 @@ void makeBox(double comprimento , double altura , double largura, string file ){
 	f.open(file, std::fstream::in | std::fstream::out | std::fstream::app);
 
 	c = comprimento/2;
-	a = altura;
+	a = altura/2;
 	la = largura /2;
 
 	//base
-	f << "" << (c) << " 0 " << (la) << endl;
-	f << "" << (-c) << " 0 " << (la) << endl;
-	f << "" << (-c) << " 0 " << (-la) << endl;
+	f << "" << (c) << (-a)<< (la) << endl;
+	f << "" << (-c) << (-a) << (la) << endl;
+	f << "" << (-c) << (-a)<< (-la) << endl;
 
-	f << "" << (c) << " 0 " << (la) << endl;
-	f << "" << (-c) << " 0 " << (-la) << endl;
-	f << "" << (c) << " 0 " << (-la) << endl;
+	f << "" << (c) << (-a) << (la) << endl;
+	f << "" << (-c) << (-a) << (-la) << endl;
+	f << "" << (c) << (-a) << (-la) << endl;
 
 
 	//topo
@@ -59,39 +59,39 @@ void makeBox(double comprimento , double altura , double largura, string file ){
 
 	//face 1
 
-	f << "" << (-c) << " 0 " << (-la) << endl;
-	f << "" << (c) << " 0 " << (-la) << endl;
+	f << "" << (-c) << (-a) << (-la) << endl;
+	f << "" << (c) << (-a) << (-la) << endl;
 	f << "" << (c) << (a) << (-la) << endl;
 
-	f << "" << (-c) << " 0 " << (-la) << endl;
+	f << "" << (-c) << (-a) << (-la) << endl;
 	f << "" << (-c) << (a) << (-la) << endl;
 	f << "" << (c) << (a) << (-la) << endl;
 
 	//face 2
 
-	f << "" << (c) << " 0 " << (-la) << endl;
+	f << "" << (c) << (-a) << (-la) << endl;
 	f << "" << (c) << (a) << (-la) << endl;
 	f << "" << (c) << (a) << (la) << endl;
 
-	f << "" << (c) << " 0 " << (la) << endl;
+	f << "" << (c) << (-a) << (la) << endl;
 	f << "" << (c) << (a) << (la) << endl;
-	f << "" << (c) << " 0 " << (-la) << endl;
+	f << "" << (c) << (-a) << (-la) << endl;
 
 	//face 3
 	f << "" << (c) << (a) << (la) << endl;
-	f << "" << (c) << " 0 " << (la) << endl;
-	f << "" << (-c) << " 0 " << (la) << endl;
+	f << "" << (c) << (-a) << (la) << endl;
+	f << "" << (-c) << (-a) << (la) << endl;
 
-	f << "" << (-c) << " 0 " << (la) << endl;
+	f << "" << (-c) << (-a) << (la) << endl;
 	f << "" << (-c) << (a) << (la) << endl;
 	f << "" << (c) << (a) << (la) << endl;
 
 	//face 4
-	f << "" << (-c) << " 0 " << (la) << endl;
+	f << "" << (-c) << (-a) << (la) << endl;
 	f << "" << (-c) << (a) << (la) << endl;
-	f << "" << (-c) << " 0 " << (-la) << endl;
+	f << "" << (-c) << (-a) << (-la) << endl;
 
-	f << "" << (-c) << " 0 " << (-la) << endl;
+	f << "" << (-c) << (-a) << (-la) << endl;
 	f << "" << (-c) << (a) << (-la) << endl;
 	f << "" << (-c) << (a) << (la) << endl;
 
