@@ -39,7 +39,7 @@ glBegin(GL_TRIANGLES);
     glVertex3f(-1.0f, 1.0f, -1.0f);
     glVertex3f(1.0f, 1.0f, -1.0f);
 
-
+//face1
     glColor3b(100, 0, 0);
     glVertex3f(-1.0f, 0.0f, -1.0f);
     glVertex3f(1.0f, 0.0f, -1.0f);
@@ -50,6 +50,7 @@ glBegin(GL_TRIANGLES);
     glVertex3f(-1.0f, 1.0f, -1.0f);
     glVertex3f(1.0f, 1.0f, -1.0f);
 
+//face2
     glColor3b(100, 100, 0);
     glVertex3f(1.0f, 0.0f, -1.0f);
     glVertex3f(1.0f, 1.0f, -1.0f);
@@ -60,6 +61,7 @@ glBegin(GL_TRIANGLES);
     glVertex3f(1.0f, 1.0f, 1.0f);
     glVertex3f(1.0f, 0.0f, -1.0f);
 
+    //face 3
     glColor3b(100, 0, 100);
     glVertex3f(1.0f, 1.0f, 1.0f);
     glVertex3f(1.0f, 0.0f, 1.0f);
@@ -71,6 +73,7 @@ glBegin(GL_TRIANGLES);
     glVertex3f(-1.0f, 1.0f, 1.0f);
     glVertex3f(1.0f, 1.0f, 1.0f);
 
+    //face4 
     glColor3b(0,100,100);
     glVertex3f(-1.0f, 0.0f, 1.0f);
     glVertex3f(-1.0f, 1.0f, 1.0f);
