@@ -179,7 +179,7 @@ void makeCone(float radius, float height, int slices, int stacks, string file) {
 
 			if (i == stacks - 1) {
 
-				// Top
+				// Topo
 				f << "" << (r - b * i) * sin(a * j) << i * h << (r - b * i) * cos(a * j) << endl;
 
 
@@ -190,7 +190,7 @@ void makeCone(float radius, float height, int slices, int stacks, string file) {
 			}
 			else {
 
-				// Side
+				// Lateral
 				f << "" << (radius - b * i) * sin(a * j) << i * h << (r - b * i) * cos(a * j) << endl;
 
 				f << "" << (radius - b * (i + 1)) * sin(a * (j + 1)) << (i + 1) * h << (radius - b * (i + 1)) * cos(a * (j + 1)) << endl;
