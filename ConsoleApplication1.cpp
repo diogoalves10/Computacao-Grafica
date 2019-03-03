@@ -171,39 +171,39 @@ void makeCone(float radius, float height, int slices, int stacks, string file) {
 			if (i==0) {
 
 				// Base
-				f << "" << "0" << "0" << "0" << endl;
+				f << "" << "0 " << "0" << " 0" << endl;
 
-				f << "" << radius * sin(a * (j + 1)) << "0" << radius * cos(a * (j + 1)) << endl;
+				f << "" << radius * sin(a * (j + 1)) << " 0 " << radius * cos(a * (j + 1)) << endl;
 
-				f << "" << radius * sin(a * j) << "0" << radius * cos(a * j) << endl;
+				f << "" << radius * sin(a * j) << " 0 " << radius * cos(a * j) << endl;
 			}
 
 			if (i == stacks - 1) {
 
 				// Topo
-				f << "" << (radius - b * i) * sin(a * j) << i * h << (radius - b * i) * cos(a * j) << endl;
+				f << "" << (radius - b * i) * sin(a * j)<<" " << i * h <<" "<< (radius - b * i) * cos(a * j) << endl;
 
 
-				f << "" << (radius - b * i) * sin(a * (j + 1)) << i * h << (radius - b * i) * cos(a * (j + 1)) << endl;
+				f << "" << (radius - b * i) * sin(a * (j + 1))<<" " << i * h <<" "<< (radius - b * i) * cos(a * (j + 1)) << endl;
 
-				f << "" << "0" << (i + 1) * h << "0" << endl;
+				f << "" << "0 " << (i + 1) * h << " 0" << endl;
 
 			}
 			else {
 
 				// Lateral
-				f << "" << (radius - b * i) * sin(a * j) << i * h << (radius - b * i) * cos(a * j) << endl;
+				f << "" << (radius - b * i) * sin(a * j)<<" " << i * h <<" "<< (radius - b * i) * cos(a * j) << endl;
 
-				f << "" << (radius - b * (i + 1)) * sin(a * (j + 1)) << (i + 1) * h << (radius - b * (i + 1)) * cos(a * (j + 1)) << endl;
+				f << "" << (radius - b * (i + 1)) * sin(a * (j + 1))<<" " << (i + 1) * h <<" "<< (radius - b * (i + 1)) * cos(a * (j + 1)) << endl;
 
-				f << "" << (radius - b * (i + 1)) * sin(a * j) << (i + 1) * h << (radius - b * (i + 1)) * cos(a * j) << endl;
+				f << "" << (radius - b * (i + 1)) * sin(a * j) <<" "<< (i + 1) * h<<" " << (radius - b * (i + 1)) * cos(a * j) << endl;
 
 
-				f << "" << (radius - b * i) * sin(a * j) << i * h << (radius - b * i) * cos(a * j) << endl;
+				f << "" << (radius - b * i) * sin(a * j)<<" " << i * h <<" "<< (radius - b * i) * cos(a * j) << endl;
 
-				f << "" << (radius - b * i) * sin(a * (j + 1)) << i * h << (radius - b * i) * cos(a * (j + 1)) << endl;
+				f << "" << (radius - b * i) * sin(a * (j + 1))<<" " << i * h<<" " << (radius - b * i) * cos(a * (j + 1)) << endl;
 
-				f << "" << (radius - b * (i + 1)) * sin(a * (j + 1)) << (i + 1) * h << (radius - b * (i + 1)) * cos(a * (j + 1)) << endl;
+				f << "" << (radius - b * (i + 1)) * sin(a * (j + 1))<<" " << (i + 1) * h <<" "<< (radius - b * (i + 1)) * cos(a * (j + 1)) << endl;
 			}
 		}
 	}
@@ -224,7 +224,7 @@ void makeCone(float radius, float height, int slices, int stacks, string file) {
                     }
 
                     else if (strcmp(argv[1],"Cone")==0){
-                      //  makeCone
+                      makeCone(atof(argv[2]), atof(argv[3]), atof(argv[4]), atof(argv[5]),argv[6]);
                     }
 
                     else if (strcmp(argv[1],"Sphere")==0){
