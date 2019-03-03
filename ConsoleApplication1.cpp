@@ -156,7 +156,59 @@ void makeBox(double comprimento , double altura , double largura,/*double diviso
     }
 }
 
+void makeCone(float radius, float height, int slices, int stacks, string file) {
 
+	float a = (2 * M_PI) / slices;
+	float h = height / stacks;
+	float b = radius / slices;
+
+	ofstream f;
+	f.open(file, std::fstream::in | std::fstream::out | std::fstream::app);
+
+	for (int i = 0; i < stacks; i++) {
+		for (int j = 0; j < slices; j++) {
+
+			if (i==0) {
+
+				// Base
+				f << "" << "0" << "0" << "0" << endl;
+
+				f << "" << radius * sin(a * (j + 1)) << "0" << r * cos(a * (j + 1)) << endl;
+
+				f << "" << radius * sin(a * j) << "0" << r * cos(a * j) << endl;
+			}
+
+			if (i == stacks - 1) {
+
+				// Topo
+				f << "" << (r - b * i) * sin(a * j) << i * h << (r - b * i) * cos(a * j) << endl;
+
+
+				f << "" << (radius - b * i) * sin(a * (j + 1)) << i * h << (radius - b * i) * cos(a * (j + 1)) << endl;
+
+				f << "" << "0" << (i + 1) * h << "0" << endl;
+
+			}
+			else {
+
+				// Lateral
+				f << "" << (radius - b * i) * sin(a * j) << i * h << (r - b * i) * cos(a * j) << endl;
+
+				f << "" << (radius - b * (i + 1)) * sin(a * (j + 1)) << (i + 1) * h << (radius - b * (i + 1)) * cos(a * (j + 1)) << endl;
+
+				f << "" << (radius - b * (i + 1)) * sin(a * j) << (i + 1) * h << (radius - b * (i + 1)) * cos(a * j) << endl;
+
+
+				f << "" << (radius - b * i) * sin(a * j) << i * h << (radius - b * i) * cos(a * j) << endl;
+
+				f << "" << (radius - b * i) * sin(a * (j + 1)) << i * h << (radius - b * i) * cos(a * (j + 1)) << endl;
+
+				f << "" << (radius - b * (i + 1)) * sin(a * (j + 1)) << (i + 1) * h << (radius - b * (i + 1)) * cos(a * (j + 1)) << endl;
+			}
+		}
+	}
+	f.close();
+}
 
     int main(int argc , char **argv){
 
