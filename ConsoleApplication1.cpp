@@ -155,8 +155,6 @@ void makeBox(double comprimento , double altura , double largura, string file ){
 
 void makeCone(float radius, float height, int slices, int stacks, string file) {
 
-	//npoints = 2 * slices * stacks;
-
 	float a = (2 * M_PI) / slices;
 	float h = height / stacks;
 	float b = radius / slices;
