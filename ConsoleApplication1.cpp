@@ -22,7 +22,8 @@ void makePlane(double side, string file) {
 	f << "" << (-l) << " 0 " << (-l) << endl;
 	f << "" << (l) << " 0 " << (l) << endl;
 	f << "" << (l) << " 0 " << (-l) << endl;
-	
+
+	f<<"------------------END--------------------"<<endl;
 	f.close();
 }
 
@@ -98,6 +99,8 @@ void makeBox(double comprimento , double altura , double largura,/*double diviso
 	f << "" << (-c)<<" " << (a)<<" " << (-la) << endl;
 	f << "" << (-c)<<" " << (a)<<" " << (la) << endl;
 
+	f<<"------------------END--------------------"<<endl;
+
 	f.close();
 
 
@@ -140,13 +143,13 @@ void makeBox(double comprimento , double altura , double largura,/*double diviso
             z4 = radius * sin(phi + cSlices) * cos(teta);
 
 
-            f << "" << (x3)<<" " << (y3)<<" " << (z3) << endl;
-            f << "" << (x1)<<" " << (y1)<<" " << (z1) << endl;
-            f << "" << (x4)<<" " << (y4)<<" " << (z4) << endl;
+            f << "" << x3<<" " << y3<<" " << z3 << endl;
+            f << "" << x1<<" " << y1<<" " << z1 << endl;
+            f << "" << x4<<" " << y4<<" " << z4 << endl;
 
-            f << "" << (x3)<<" " << (y3)<<" " << (z3)<<" " << endl;
-            f << "" << (x2)<<" " << (y2)<<" " << (z2) << endl;
-            f << "" << (x1)<<" " << (y1)<<" " << (z1) << endl;
+            f << "" << x3<<" " << y3<<" " << z3<<" " << endl;
+            f << "" << x2<<" " << y2<<" " << z2 << endl;
+            f << "" << x1<<" " << y1<<" " << z1 << endl;
 
             phi += cSlices;
 
@@ -154,6 +157,8 @@ void makeBox(double comprimento , double altura , double largura,/*double diviso
 
         teta+= cStacks;
     }
+		f<<"-------------------END-------------------"<<endl;
+    f.close();
 }
 
 void makeCone(float radius, float height, int slices, int stacks, string file) {
@@ -207,6 +212,7 @@ void makeCone(float radius, float height, int slices, int stacks, string file) {
 			}
 		}
 	}
+	f<<"--------------------END------------------"<<endl;
 	f.close();
 }
 
@@ -215,22 +221,20 @@ void makeCone(float radius, float height, int slices, int stacks, string file) {
 
     if (argc >1) {
 
-                    if (strcmp(argv[1],"Plane")==0) {
-                        makePlane(atof(argv[2]),argv[3]);
-                    }
+		if (strcmp(argv[1], "Plane") == 0) {
+			makePlane(atof(argv[2]), argv[3]);
+		} else if (strcmp(argv[1], "Box") == 0) {
+			makeBox(atof(argv[2]), atof(argv[3]), atof(argv[4]), argv[5]);
+		} else if (strcmp(argv[1], "Cone") == 0) {
+			makeCone(atof(argv[2]), atof(argv[3]), atof(argv[4]), atof(argv[5]), argv[6]);
+		} else if (strcmp(argv[1], "Sphere") == 0) {
+			makeSphere(atof(argv[2]), atoi(argv[3]), atoi(argv[4]), argv[5]);
+		} else
+			printf("Figura inexistente\n");
 
-                    else if (strcmp(argv[1],"Box")==0) {
-                        makeBox(atof(argv[2]), atof(argv[3]), atof(argv[4]), argv[5]);
-                    }
 
-                    else if (strcmp(argv[1],"Cone")==0){
-                      makeCone(atof(argv[2]), atof(argv[3]), atof(argv[4]), atof(argv[5]),argv[6]);
-                    }
+	}
 
-                    else if (strcmp(argv[1],"Sphere")==0){
-                        makeSphere(atof(argv[2]), atoi(argv[3]), atoi(argv[4]), argv[5]);
-                    }
-    }
 
     else {
 
