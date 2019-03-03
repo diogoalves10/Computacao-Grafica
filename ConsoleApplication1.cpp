@@ -152,3 +152,35 @@ void makeBox(double comprimento , double altura , double largura, string file ){
         teta+= cStacks;
     }
 }
+
+
+
+    int main(int argc , char **argv){
+
+
+    if (argc >1) {
+
+                    if (srtcmp(argv[1],"Plane")==0) {
+                        makePlane(atof(argv[2]),argv[3]));
+                    }
+
+                    else if (strcmp(argv[1],"Box")==0) {
+                        makeBox(atof(argv[2]), atof(argv[3]), atof(argv[4]), argv[5]);
+                    }
+
+                    else if (strcmp(argv[1],"Cone")==0){
+                      //  makeCone
+                    }
+
+                    else if (strcmp(argv[1],"Sphere")==0){
+                        makeSphere(atof(argv[2]), atoi(argv[3]), atoi(argv[4]), argv[5]);
+                    }
+    }
+
+    else {
+
+        printf ("Número de argumentos insuficiente\n");
+    }
+}
+
+
