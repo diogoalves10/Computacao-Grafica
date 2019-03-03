@@ -28,7 +28,7 @@ void makePlane(double side, string file) {
 
 
 
-void makeBox(double comprimento , double altura , double largura,/*double divisoes*/, string file ){
+void makeBox(double comprimento , double altura , double largura,/*double divisoes*/ string file ){
 
 	ofstream f;
 	f.open(file, std::fstream::in | std::fstream::out | std::fstream::app);
@@ -173,15 +173,15 @@ void makeCone(float radius, float height, int slices, int stacks, string file) {
 				// Base
 				f << "" << "0" << "0" << "0" << endl;
 
-				f << "" << radius * sin(a * (j + 1)) << "0" << r * cos(a * (j + 1)) << endl;
+				f << "" << radius * sin(a * (j + 1)) << "0" << radius * cos(a * (j + 1)) << endl;
 
-				f << "" << radius * sin(a * j) << "0" << r * cos(a * j) << endl;
+				f << "" << radius * sin(a * j) << "0" << radius * cos(a * j) << endl;
 			}
 
 			if (i == stacks - 1) {
 
 				// Topo
-				f << "" << (r - b * i) * sin(a * j) << i * h << (r - b * i) * cos(a * j) << endl;
+				f << "" << (radius - b * i) * sin(a * j) << i * h << (radius - b * i) * cos(a * j) << endl;
 
 
 				f << "" << (radius - b * i) * sin(a * (j + 1)) << i * h << (radius - b * i) * cos(a * (j + 1)) << endl;
@@ -192,7 +192,7 @@ void makeCone(float radius, float height, int slices, int stacks, string file) {
 			else {
 
 				// Lateral
-				f << "" << (radius - b * i) * sin(a * j) << i * h << (r - b * i) * cos(a * j) << endl;
+				f << "" << (radius - b * i) * sin(a * j) << i * h << (radius - b * i) * cos(a * j) << endl;
 
 				f << "" << (radius - b * (i + 1)) * sin(a * (j + 1)) << (i + 1) * h << (radius - b * (i + 1)) * cos(a * (j + 1)) << endl;
 
