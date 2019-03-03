@@ -23,7 +23,7 @@ void makePlane(double side, string file) {
 	f << "" << (l) << " 0 " << (l) << endl;
 	f << "" << (l) << " 0 " << (-l) << endl;
 
-	f<<"------------------END--------------------"<<endl;
+
 	f.close();
 }
 
@@ -99,7 +99,7 @@ void makeBox(double comprimento , double altura , double largura,/*double diviso
 	f << "" << (-c)<<" " << (a)<<" " << (-la) << endl;
 	f << "" << (-c)<<" " << (a)<<" " << (la) << endl;
 
-	f<<"------------------END--------------------"<<endl;
+
 
 	f.close();
 
@@ -157,7 +157,7 @@ void makeBox(double comprimento , double altura , double largura,/*double diviso
 
         teta+= cStacks;
     }
-		f<<"-------------------END-------------------"<<endl;
+
     f.close();
 }
 
@@ -212,7 +212,7 @@ void makeCone(float radius, float height, int slices, int stacks, string file) {
 			}
 		}
 	}
-	f<<"--------------------END------------------"<<endl;
+	
 	f.close();
 }
 
