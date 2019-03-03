@@ -14,7 +14,7 @@ void makePlane(double side, string file) {
 	ofstream f;
 	f.open(file, std::fstream::in | std::fstream::out | std::fstream::app);
 	double l;
-	l = lado / 2;
+	l = side / 2;
 	f << "" << (-l) << " 0 " << (-l) << endl;
 	f << "" << (-l) << " 0 " << (l) << endl;
 	f << "" << (l) << " 0 " << (l) << endl;
@@ -28,14 +28,17 @@ void makePlane(double side, string file) {
 
 
 
-void makeBox(double comprimento , double altura , double largura, string file ){
+void makeBox(double comprimento , double altura , double largura,/*double divisoes*/, string file ){
 
 	ofstream f;
 	f.open(file, std::fstream::in | std::fstream::out | std::fstream::app);
 
-	c = comprimento/2;
-	a = altura/2;
-	la = largura /2;
+	double c = comprimento/2;
+	double a = altura/2;
+	double la = largura /2;
+	//double d = (altura/divisoes)/2;
+
+	//for (i=0; d<a ; i++;)
 
 	//base
 	f << "" << (c) << (-a)<< (la) << endl;
@@ -134,7 +137,7 @@ void makeBox(double comprimento , double altura , double largura, string file ){
 
             x4 = radius * sin(phi + cSlices) * sin(teta);
             y4 = radius * cos(phi + cSlices);
-            z4 = radius * sin(phi + cSlices * cos(teta);
+            z4 = radius * sin(phi + cSlices) * cos(teta);
 
 
             f << "" << x3 << y3 << z3 << endl;
@@ -160,8 +163,8 @@ void makeBox(double comprimento , double altura , double largura, string file ){
 
     if (argc >1) {
 
-                    if (srtcmp(argv[1],"Plane")==0) {
-                        makePlane(atof(argv[2]),argv[3]));
+                    if (strcmp(argv[1],"Plane")==0) {
+                        makePlane(atof(argv[2]),argv[3]);
                     }
 
                     else if (strcmp(argv[1],"Box")==0) {
