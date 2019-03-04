@@ -37,9 +37,6 @@ void makeBox(double comprimento , double altura , double largura,/*double diviso
 	double c = comprimento/2;
 	double a = altura/2;
 	double la = largura /2;
-	//double d = (altura/divisoes)/2;
-
-	//for (i=0; d<a ; i++;)
 
 //base
     f << "" <<(c)<<" " <<(-a)<<" " <<(la) << endl;
@@ -114,56 +111,67 @@ void makeBox(double comprimento , double altura , double largura,/*double diviso
 
     void makeSphere (float radius, int slices , int stacks, string file) {
 
-    ofstream f;
-    f.open(file, std::fstream::in | std::fstream::out | std::fstream::app);
 
-    float x1 , x2 , x3 , x4 , y1 , y2 , y3 , y4, z1, z2, z3 , z4;
-
-    float cSlices = 2 *M_PI / slices;
-    float cStacks = M_PI / stacks;
-
-    float teta = 0;
-    float phi = 0;
+        float a = 2 * M_PI / slices;
+        float b = M_PI / stacks;
 
 
-    for (int i=0; i < stacks ; i ++){
-
-        for(int j=0; j < slices ; j++) {
-
-            x1 = radius * sin (phi + cSlices) * sin(teta + cStacks);
-            y1 = radius * cos (phi + cSlices);
-            z1 = radius * sin (phi + cSlices) * cos(teta * cStacks);
-
-            x2 = radius * sin(phi) * sin (teta + cStacks);
-            y2 = radius * cos(phi);
-            z2 = radius * sin(phi) * cos (teta + cStacks);
-
-            x3 = radius * sin(phi) * sin(teta);
-            y3 = radius * cos(phi);
-            z3 = radius * sin(phi) * cos (teta);
-
-            x4 = radius * sin(phi + cSlices) * sin(teta);
-            y4 = radius * cos(phi + cSlices);
-            z4 = radius * sin(phi + cSlices) * cos(teta);
+        ofstream f;
+        f.open(file, std::fstream::in | std::fstream::out | std::fstream::app);
+        for (float i = 0; i < stacks; i++) {
+            for (float j = 0; j < slices; j++) {
 
 
-            f << "" << x3<<" " << y3<<" " << z3 << endl;
-            f << "" << x1<<" " << y1<<" " << z1 << endl;
-            f << "" << x4<<" " << y4<<" " << z4 << endl;
+                if (i == 0) {
 
-            f << "" << x3<<" " << y3<<" " << z3<<" " << endl;
-            f << "" << x2<<" " << y2<<" " << z2 << endl;
-            f << "" << x1<<" " << y1<<" " << z1 << endl;
+                    f << "" << radius * sin(i * b + b) * sin(j * a + a) << " "<<radius * cos(i + b)
+                     <<" " << radius * sin(i * b + b) * cos(j * a + a) << endl;
 
-            phi += cSlices;
+                    f << "" << radius * sin(i * b) * sin(j * a)<<" " << radius * cos(i * b)
+                     << " "<< radius * sin(i * b) * cos(j * a) << endl;
+
+                    f << "" << radius * sin(i * b + b) * sin(j * a) << " "<< radius * cos(i * b + b)
+                    << " " << radius * sin(i * b + b) * cos(j * a) << endl;
+                } else if (i == stacks - 1) {
+                    f << "" << radius * sin(i * b) * sin(j * a + a) << " " << radius * cos(i * b) << " "
+                      << radius * sin(i * b) * cos(j * a + a) << endl;
+
+                    f << "" << radius * sin(i * b) * sin(j * a) << " " << radius * cos(i * b) << " "
+                      << radius * sin(i * b) * cos(j * a) << endl;
+
+                    f << "" << radius * sin(i * b + b) * sin(j * a + a) << " " << radius * cos(i * b + b) << " "
+                      << radius * sin(i * b + b) * cos(j * a + a) << endl;
+                } else {
+
+                    f << "" << radius * sin(i * b + b) * sin(j * a + a) << " " << radius * cos(i * b + b) << " "
+                      << radius * sin(i * b + b) * cos(j * a + a) << endl;
+
+
+                    f << "" << radius * sin(i * b) * sin(j * a) << " " << radius * cos(i * b) << " "
+                      << radius * sin(i * b) * cos(j * a) << endl;
+
+                    f << "" << radius * sin(i * b + b) * sin(j * a) << " " << radius * cos(i * b + b) << " "
+                      << radius * sin(i * b + b) * cos(j * a) << endl;
+
+                    f << "" << radius * sin(i * b) * sin(j * a + a) << " " << radius * cos(i * b) << " "
+                      << radius * sin(i * b) * cos(j * a + a) << endl;
+
+                    f << "" << radius * sin(i * b) * sin(j * a) << " " << radius * cos(i * b) << " "
+                      << radius * sin(i * b) * cos(j * a) << endl;
+
+                    f << "" << radius * sin(i * b + b) * sin(j * a + a) << " " << radius * cos(i * b + b) << " "
+                      << radius * sin(i * b + b) * cos(j * a + a) << endl;
+
+                }
 
             }
 
-        teta+= cStacks;
+
+        }
+        f.close();
     }
 
-    f.close();
-}
+
 
 void makeCone(float radius, float height, int slices, int stacks, string file) {
 
